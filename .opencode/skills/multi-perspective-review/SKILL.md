@@ -67,7 +67,7 @@ Each comment MUST be:
 - **Inline** — attached to the specific line in the diff
 - **Contextual** — reference the exact code, not general principles
 - **Actionable** — suggest a concrete change, or explicitly mark FYI
-- **Labelled** — prefix with the perspective, e.g. `**Perspective: [SSE | Architect | Quant | Security | Correctness]**`
+- **Labelled** — prefix with the perspective, e.g. `**Perspective: [SSE | Architect | Quant | Security | Correctness | Maintainability | Scope]**`
 
 Do NOT create:
 
