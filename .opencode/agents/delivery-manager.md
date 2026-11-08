@@ -1,5 +1,5 @@
 ---
-description: Orchestrates the software engineering factory. Owns the work queue, delegates to specialist agents, enforces stage gates. Use for any multi-step task, status tracking, or when unsure which specialist to use.
+description: Orchestrates the software engineering factory. Owns the work queue, delegates to specialists, enforces stage gates. Use for any multi-step task, status tracking, or when unsure who does what.
 mode: subagent
 ---
 

@@ -28,12 +28,12 @@ When beginning a new set of changes, check out a new branch before making any mo
 
 ## Pre-Commit Checks
 
-This repo is markdown + config. Before committing:
+This repo is markdown + config. Before committing, run the same four jobs CI runs (`.github/workflows/ci.yml`):
 
-1. Validate agent frontmatter: every `.opencode/agents/*.md` has `description` + `mode`.
-2. Validate skill frontmatter: every `.opencode/skills/*/SKILL.md` has `name` + `description`.
-
-CI runs the same checks (`.github/workflows/ci.yml`); keep the two in sync.
+1. **Frontmatter (strict):** every `.opencode/agents/*.md` has `description` (10–200 chars) + `mode` from allowlist `[subagent]`; every `.opencode/skills/*/SKILL.md` has `name` (must match parent dir, unique) + `description` (10–200 chars).
+2. **Markdown hygiene:** no trailing whitespace, no heading-level jumps (e.g. `#` → `###`), every fenced code block opens with a language tag (e.g. ` ```text `), no multiple consecutive blank lines.
+3. **Spec/template compliance:** every `docs/specs/*.md` and `docs/templates/spec-template.md` must contain sections Problem, Non-goals, Users, Acceptance criteria (with Given/When/Then), Risks, Rollout. (`plan-template.md` is exempt — slice-plan shape, not a spec.)
+4. **Routing integrity:** every `factory-*` / `multi-perspective-review` / agent-slug reference in markdown must resolve to an existing skill or agent file (lines naming external repos like `cointrader` are out of scope); no skill except `factory-review` may claim gate-verdict authority (`APPROVE` / `REQUEST CHANGES` / `VETO` / `APPROVE-FOR-LIVE`) — route verdicts to `factory-review`.
 
 ## Pull Requests
 
