@@ -12,6 +12,7 @@ One orchestrator, specialist executors, explicit gates. The user talks to delive
 - **Solutions Architect**: seams and contracts before code.
 - **Senior Engineer**: sliced, tested implementation.
 - **Quality Engineer**: merge gate.
+- **Technical Writer**: docs hygiene, structure, and lifecycle. Advisory only, never gates.
 - **Strategy Designer → Quant Trader → Algo Trader → Risk Manager**: trading chain. Risk Manager vetoes live deployment unconditionally.
 
 ## Routing table
@@ -23,6 +24,7 @@ One orchestrator, specialist executors, explicit gates. The user talks to delive
 | Bug | delivery-manager → senior-engineer (repro) → quality-engineer (regression test) |
 | New strategy | delivery-manager → strategy-designer → quant-trader → algo-trader → risk-manager → senior-engineer → quality-engineer |
 | Risk/exposure question | delivery-manager → risk-manager (blocking) |
+| Docs/hygiene request | delivery-manager → technical-writer (advisory) → quality-engineer (gate) |
 
 ## Gates
 
