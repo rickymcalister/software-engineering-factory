@@ -1,0 +1,27 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate agent and skill frontmatter
+        run: |
+          python3 - <<'EOF'
+          import pathlib, re, sys
+          errors = []
+          for f in sorted(pathlib.Path('.opencode/agents').glob('*.md')):
+              head = f.read_text().split('---')
+              if len(head) < 3 or 'description' not in head[1] or 'mode' not in head[1]:
+                  errors.append(f'{f}: missing description or mode frontmatter')
+          for f in sorted(pathlib.Path('.opencode/skills').glob('*/SKILL.md')):
+              head = f.read_text().split('---')
+              if len(head) < 3 or 'name' not in head[1] or 'description' not in head[1]:
+                  errors.append(f'{f}: missing name or description frontmatter')
+          if errors:
+              print('\n'.join(errors))
+              sys.exit(1)
+          print('factory frontmatter OK')
+          EOF
