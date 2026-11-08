@@ -21,7 +21,7 @@ To answer your question directly: yes — **Delivery Manager** is the right orch
 
 ## Lifecycle
 
-```
+```text
 idea → factory-intake (spec + feasibility) → factory-delivery (design → slice → build → verify) → factory-review (merge gate) → ship
 ```
 
@@ -35,7 +35,7 @@ Trading path inserts `strategy-designer → quant-trader → algo-trader → ris
 
 ## Layout
 
-```
+```text
 .opencode/agents/        10 role definitions
 .opencode/skills/        factory-intake, factory-delivery, factory-review
 docs/templates/          spec + plan templates
