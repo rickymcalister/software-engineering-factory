@@ -1,6 +1,6 @@
 ---
 name: multi-perspective-review
-description: Deep multi-perspective PR review with caller-chosen lenses. Gathers PR context via gh, cross-validates existing comments, and submits labelled inline findings through a single GitHub review API call. Advisory only — never issues gate verdicts.
+description: Multi-perspective PR review with caller-chosen lenses. Gathers context via gh, submits labelled inline findings. Advisory only, no gate verdicts.
 ---
 
 # Multi-Perspective Review
@@ -79,7 +79,7 @@ Do NOT create:
 
 Use a single API call to create a review with all inline comments:
 
-```
+```text
 POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews
 ```
 
@@ -107,7 +107,7 @@ Requirements:
 
 Confirm the comments were created:
 
-```
+```text
 gh api repos/{owner}/{repo}/pulls/{pull_number}/comments --paginate --jq '.[].body[0:80]'
 ```
 
@@ -117,7 +117,7 @@ Check that all comments appear and none were silently dropped. Report comment co
 
 When delegating this review to another agent:
 
-```
+```text
 Review PR #<number> in <owner>/<repo> using the multi-perspective-review skill.
 
 Branch: <branch>

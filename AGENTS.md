@@ -12,7 +12,7 @@ Before starting any non-trivial task, load the appropriate skill(s) using the sk
 
 Factory lifecycle sequence:
 
-```
+```text
 factory-intake → factory-delivery → factory-review → git-workflow-and-versioning
 ```
 
