@@ -24,6 +24,7 @@ One orchestrator, specialist executors, explicit gates. The user talks to delive
 | Bug | delivery-manager → senior-engineer (repro) → quality-engineer (regression test) |
 | New strategy | delivery-manager → strategy-designer → quant-trader → algo-trader → risk-manager → senior-engineer → quality-engineer |
 | Risk/exposure question | delivery-manager → risk-manager (blocking) |
+| Reliability/alarms (steady-state) | delivery-manager → sre-engineer (diagnose/propose) → quality-engineer (gate for alarm and runbook changes) |
 | Docs/hygiene request | delivery-manager → technical-writer (advisory) → quality-engineer (gate) |
 
 ## Gates
